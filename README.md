@@ -10,7 +10,7 @@ This bot can be used with `/todo` in Slack.
 > `/todo` Reply to email
 - &#x1f4e5; Messages receive on Slack
 > 「Reply to email」を追加しました！<br>
-> https&#58;//docs.google.com/document/hogehoge
+> https&#58;/<span>/docs.google.com</span>/document/hogehoge~
 
 ## &#x1f331; Necessary
 There are two things you need to get this Slack bot to work.
