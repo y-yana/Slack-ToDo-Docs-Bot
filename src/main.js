@@ -2,7 +2,7 @@ const BOT_USER_OAUTH_TOKEN = 'Paste your Bot user OAuth Token'
 const SLACK_POST_URL = 'https://slack.com/api/chat.postMessage'
 
 // Docsに書き込む処理
-function insertText() {
+function insertText(text) {
   var doc = DocumentApp.getActiveDocument();
 
   // ドキュメントの行数を取得
@@ -18,7 +18,7 @@ function insertText() {
   }
 
   // 箇条書きで表示
-  insert_paragraph = doc.insertListItem(insert_row, 'test').setGlyphType(DocumentApp.GlyphType.BULLET);
+  insert_paragraph = doc.insertListItem(insert_row, text).setGlyphType(DocumentApp.GlyphType.BULLET);
 
 }
 
@@ -27,9 +27,15 @@ function doPost(e) {
   // メッセージを取得
   var get_text = e.parameter.text;
 
+  // Docsに書き込む
+  insertText(get_text);
+
+  var docs_url = 'Paste your Docs url'
+  var return_message = '「' + get_text + '」を追加しました！' + docs_url
+
   var response = {
     response_type: 'in_channel',
-    text: get_text,
+    text: return_message,
   };
 
   return ContentService.createTextOutput(JSON.stringify(response)).setMimeType(ContentService.MimeType.JSON);
