@@ -7,8 +7,10 @@ function insertText() {
   targetDate.setDate(targetDate.getDate() + plusDays);
   var date_text = Utilities.formatDate(targetDate, 'Asia/Tokyo', 'MM/dd');
 
- // ◯行目以降にアジェンダを差し込む
-  var insert_row = 0;
+ // 最後の行にアジェンダを差し込む
+  const paragraphes = DocumentApp.getActiveDocument().getBody().getParagraphs();
+  var paragraphesLength = paragraphes.length;
+  var insert_row = paragraphesLength;
 
  // 追加テキストを行ごとで配列化
   /**************************
