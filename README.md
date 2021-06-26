@@ -43,11 +43,11 @@ In App script editor
 Open the [Slack App](https://api.slack.com/apps/) and set the following:
 - **Slash Commands**
 
-| title | value |
-|:-----------:|:------------:|
+| title | Value |
+|-----------|------------|
 | Command | /todo |
 | Request URL | Copied exec URL by Step 2 |
 
 - **Permissions**: Add `Commands` scope for your bot.
 
-### 	&#x1f389; Now you can use `/todo` command in your Slack
+&#x1f389; Now you can use `/todo` command in your Slack
